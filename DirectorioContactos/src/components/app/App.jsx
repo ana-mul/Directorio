@@ -23,7 +23,7 @@ function App() {
             </a>
           </span>
           <span className="contact-span">
-            <a href="#" className="contact-a">
+            <a href="#" target="_blank" className="contact-a">
               Contacts
             </a>
           </span>
