@@ -1,0 +1,75 @@
+img{
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+section{
+  margin-left: 400px;
+  margin-top:10px;
+  position: relative;
+}
+
+.book-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 5px solid black;
+    width: 50%;
+    height: 550px;
+    border-radius: 18px;
+}
+
+.front-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 140px;
+ 
+}
+
+.side-container{
+    border: 5px solid blue;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width:50px;
+    height: 550px;
+    position: absolute;
+    right: 386px;
+    bottom:-4px;
+}
+
+.spiral{
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 5px;
+    height:5px ;
+    position: relative;
+    right:15px;
+}
+.spiral-one{
+    top:50px;
+}
+.spiral-two{
+    top:150px;
+}
+.spiral-three{
+    top:250px;
+}
+.spiral-four{
+    top:350px;
+}
+.spiral-five{
+    top:450px;
+}
+
+span{
+    position: absolute;
+    left: 440px;
+    border: 5px solid black;
+}
+.add-span{
+    top:40px;
+}
+.contact-span{
+    top:80px;
+}
