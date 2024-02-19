@@ -1,13 +1,13 @@
 import { useState } from "react";
-import "./App.css";
+import "./App.css"
 
-function App() {
+function App(props) {
   return (
     <>
       <section>
         <div className="book-container">
           <div className="front-container">
-            <img src="./assets/card-de.jpg" alt="" />
+            <img src={props.imagePath} alt="" />
             <h1>Mis Contactos</h1>
           </div>
           <div className="side-container">
@@ -27,6 +27,9 @@ function App() {
               Contacts
             </a>
           </span>
+        </div>
+        <div className="book-open">
+          
         </div>
       </section>
     </>

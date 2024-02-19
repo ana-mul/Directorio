@@ -1,20 +1,24 @@
 import React from "react";
+import './add.css'
 
 const Add = () => {
   return (
     <>
       <section>
-        <form action="">
+        <div>
+        <form className="form" action="">
           <label htmlFor="">Nombre</label>
           <input type="text" />
           <label htmlFor="">Teléfono</label>
-          <input type="text" />
+          <input type="number" />
           <label htmlFor="">E-mail</label>
           <input type="email" />
           <label htmlFor="">Notas</label>
-          <input type="text" />
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <button>Agregar contacto</button>
         </form>
-      </section>
+        </div>
+      </section> 
     </>
   );
 };
