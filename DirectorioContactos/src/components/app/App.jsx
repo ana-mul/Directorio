@@ -1,37 +1,55 @@
 import { useState } from "react";
-import "./App.css"
+import "./App.css";
 
-function App(props) {
+function App() {
+  //  estado global de la aplicación y gestionará la lista de contactos.
+  //funciones para agregar nuevos contactos, eliminar contactos existentes y filtrar la lista de contactos.
+
+  const [contact, setContact] = useState([]);
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [notes, setNotes] = useState("");
+
+
+  const [filter, setFilter] = useState("");
+
+  const randomID = () => {
+    return Math.floor(Math.random() * 1000000);
+  };
+
+  const inputEvent = (event) => {
+    setAddContact(event.target.value);
+  };
+
+  const add = () => {
+    if (name.trim() && phone.trim() && email.trim() !== "") {
+      //aca controlo que no este libre el input
+      //.trim ayuda a que la funcion no tome en cuenta espacios en blanco
+      //no agrego notes en el condicional porque no quiero que sea obligatoria
+      const newContact ={
+        name: name,
+        phone: phone,
+        email: email,
+        notes: notes
+      }; //si no esta libre, creo el contacto (este pasaria a se el estado actual)
+    
+      const adding = [...contact, newContact]; //se crea una varible que sume el nuevo contacto a la lista anterior
+      setContact(adding); //actualizo el estado que contiene el array
+      setName(""); //vacio el input
+      setPhone ("");
+      setEmail("");
+      setNotes("");
+    };
+  };
+
   return (
     <>
-      <section>
-        <div className="book-container">
-          <div className="front-container">
-            <img src={props.imagePath} alt="" />
-            <h1>Mis Contactos</h1>
-          </div>
-          <div className="side-container">
-              <div className="spiral spiral-one"></div>
-              <div className="spiral spiral-two"></div>
-              <div className="spiral spiral-three"></div>
-              <div className="spiral spiral-four"></div>
-              <div className="spiral spiral-five"></div>
-            </div>
-          <span className="add-span">
-            <a href="#" className="add-a">
-              Add
-            </a>
-          </span>
-          <span className="contact-span">
-            <a href="#" target="_blank" className="contact-a">
-              Contacts
-            </a>
-          </span>
-        </div>
-        <div className="book-open">
-          
-        </div>
-      </section>
+      <div>
+        <input type="text" onChange={inputEvent} value={addName} />
+        <button onClick={add}>submit</button>
+      </div>
     </>
   );
 }

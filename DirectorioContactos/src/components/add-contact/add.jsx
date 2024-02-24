@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import './add.css'
 
 const Add = () => {
+
+  // Este componente contendrá un formulario para agregar nuevos contactos.
+  // Deberá manejar los eventos de entrada del formulario y enviar la información del nuevo contacto al componente App para ser agregado a la lista de contactos.
   return (
     <>
-      <section>
+
+{/* 
+Este componente se encargaría de contener el formulario para agregar nuevos contactos.
+Debería tener los campos de entrada (inputs) necesarios para ingresar la información del contacto, como nombre, número de teléfono, dirección, etc. */}
+      {/* <section>
         <div>
         <form className="form" action="">
           <label htmlFor="">Nombre</label>
@@ -18,7 +25,7 @@ const Add = () => {
           <button>Agregar contacto</button>
         </form>
         </div>
-      </section> 
+      </section>  */}
     </>
   );
 };

@@ -8,7 +8,7 @@ import { List } from './components/contact-list/list.jsx'
 import { Filter } from './components/filter/filter.jsx'
 
 
-const image = './assets/card-de.jpg';
+const image = 'src/assets/imgcontact.png';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
