@@ -1,31 +1,32 @@
 import React, { useState } from "react";
-import './add.css'
+import "./add.css";
 
-const Add = () => {
-
+const Add = (props) => {
   // Este componente contendrá un formulario para agregar nuevos contactos.
   // Deberá manejar los eventos de entrada del formulario y enviar la información del nuevo contacto al componente App para ser agregado a la lista de contactos.
+
+  const { contact, setContact, name, phone, email, notes, add, inputNa, inputP, inputE, inputNo } = props;
+
   return (
     <>
-
-{/* 
+      {/* 
 Este componente se encargaría de contener el formulario para agregar nuevos contactos.
 Debería tener los campos de entrada (inputs) necesarios para ingresar la información del contacto, como nombre, número de teléfono, dirección, etc. */}
-      {/* <section>
+      <section>
         <div>
-        <form className="form" action="">
-          <label htmlFor="">Nombre</label>
-          <input type="text" />
-          <label htmlFor="">Teléfono</label>
-          <input type="number" />
-          <label htmlFor="">E-mail</label>
-          <input type="email" />
-          <label htmlFor="">Notas</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button>Agregar contacto</button>
-        </form>
+          <form className="form" action="">
+            <label htmlFor="">Nombre</label>
+            <input type="text" onChange={inputNa} value={name}/>
+            <label htmlFor="">Teléfono</label>
+            <input type="number" onChange={inputP} value={phone} />
+            <label htmlFor="">E-mail</label>
+            <input type="email" onChange={inputE} value={email} />
+            <label htmlFor="">Notas</label>
+            <textarea name="" id="" cols="30" rows="10" onChange={inputNo} value={notes}></textarea>
+            <button onClick={add}>Agregar contacto</button>
+          </form>
         </div>
-      </section>  */}
+      </section>
     </>
   );
 };
