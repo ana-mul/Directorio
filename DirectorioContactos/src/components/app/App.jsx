@@ -58,14 +58,26 @@ function App() {
 
   //FUNCION FILTRAR
 
-  const find = (filter) => {
+  const find = () => {
     //al agregar este parametro hace la funcion mas flexible
     return contact.filter((contacts) => {
       //aca filtro la lista de contactos
-      return contacts.name.toLowerCase().startsWith(screen.toLowerCase()); //aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
+      // const includes =
+      contacts.name.toLowerCase().includes(screen.toLowerCase()) ||//aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
       //verifico si el nombre empieza con determinada letra
       //vuelvo a usar filter() y normalizo la palabra en minisucula para poder comparar
+      // contacts.phone.toLowerCase().includes(screen.toLowerCase()) ||
+      // contacts.email.toLowerCase().includes(screen.toLowerCase()) ||
+      // contacts.notes.toLowerCase().includes(screen.toLowerCase());
+      
+      console.log("Contacto:", contacts.name, "Coincide:", includes);
+      // return includes;
     });
+  };
+
+  const handleInputChange = (e) => {
+    console.log("Valor de screen:", e.target.value);
+    setScreen(e.target.value);
   };
 
   //FUNCION ELIMINAR
@@ -114,6 +126,7 @@ function App() {
           find={find}
           screen={screen}
           setScreen={setScreen}
+          handleInputChange={handleInputChange}
         />
         {/* <input type="text" onChange={inputName} value={name} />
         <button onClick={add}>submit</button> */}
