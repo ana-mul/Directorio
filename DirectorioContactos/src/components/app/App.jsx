@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { Add } from "../add-contact/add.jsx";
+import { Contact } from "../contact/contact.jsx";
+import { List } from "../contact-list/list.jsx";
+import { Filter } from "../filter/filter.jsx";
+
 
 function App() {
   //  estado global de la aplicación y gestionará la lista de contactos
@@ -13,7 +18,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
 
-  const [filter, setFilter] = useState("");
+  const [screen, setScreen] = useState("");
 
   const inputName = (event) => {
     setName(event.target.value);
@@ -57,7 +62,7 @@ function App() {
     //al agregar este parametro hace la funcion mas flexible
     return contact.filter((contacts) => {
       //aca filtro la lista de contactos
-      contact.name.toLowerCase().startsWith(filter.toLowerCase()); //aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
+      return contacts.name.toLowerCase().startsWith(screen.toLowerCase()); //aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
       //verifico si el nombre empieza con determinada letra
       //vuelvo a usar filter() y normalizo la palabra en minisucula para poder comparar
     });
@@ -66,13 +71,13 @@ function App() {
   //FUNCION ELIMINAR
 
   const remove = (who) => {
-    const index = find(who).findIndex((contacts) => contacts.name === who); //una variable que incluye la funcion de filtro antes declarada
+    const index = contact.findIndex((contacts) => contacts.name === who); //una variable que incluye la funcion de filtro antes declarada
     //el metodo findIndex() que especifica el indice, en este caso del contacto que buscamos
 
     if (index !== -1) {
       //aca verificamos que encontro el contacto (sin findIndex no encuentra un elemento arroja -1)
-      const newList = contact.filter((contacts) => contacts.name !== who); //creamos una lista nueva que filtra el contacto a eliminar
-      //
+      const newList = [...contact.slice(0, index), ...contact.slice(index + 1)]; //creamos una lista nueva que filtra el contacto a eliminar
+      //para eso primero separamos el array con todos los elementos antes del contacto a eliminar, y con todos los elementos despues del contactoa eliminar
 
       setContact(newList); //actualizo el estado
     }
@@ -93,6 +98,22 @@ function App() {
           inputP={inputPhone}
           inputE={inputEmail}
           inputNo={inputNotes}
+        />
+        <Contact
+          contact={contact}
+          setContact={setContact}
+          name={name}
+          phone={phone}
+          email={email}
+          notes={notes}
+        />
+        <List setContact={setContact} contact={contact} remove={remove} />
+        <Filter
+          setContact={setContact}
+          contact={contact}
+          find={find}
+          screen={screen}
+          setScreen={setScreen}
         />
         {/* <input type="text" onChange={inputName} value={name} />
         <button onClick={add}>submit</button> */}

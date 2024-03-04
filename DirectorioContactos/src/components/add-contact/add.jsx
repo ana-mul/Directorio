@@ -23,7 +23,7 @@ Debería tener los campos de entrada (inputs) necesarios para ingresar la inform
             <input type="email" onChange={inputE} value={email} />
             <label htmlFor="">Notas</label>
             <textarea name="" id="" cols="30" rows="10" onChange={inputNo} value={notes}></textarea>
-            <button onClick={add}>Agregar contacto</button>
+            <button onClick={(e) => { e.preventDefault(); add(); }}>Agregar contacto</button>
           </form>
         </div>
       </section>
