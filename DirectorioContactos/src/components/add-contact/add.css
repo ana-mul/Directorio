@@ -50,18 +50,17 @@ button {
   border: none;
   border-radius: 10px;
 }
-
-span{
-    position: relative;
-    border: 5px solid black;
-    width: 70px;
-}
-.search-span-add {
-  bottom: 500px;
+.div-span-add{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  position: relative;
+  bottom:510px;
   left: 435px;
 }
 
-.contact-span-add {
-  bottom: 445px;
-  left: 400px;
+span{
+    border: 5px solid black;
+    width: 70px;
 }
+

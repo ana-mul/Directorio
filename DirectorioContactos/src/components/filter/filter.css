@@ -7,18 +7,16 @@
   display: flex;
   flex-direction: column;
 }
-
-span {
+.div-span-filter{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
   position: relative;
-  border: 5px solid black;
-}
-.add-span-filter {
-  bottom: 100px;
-  left: 436px;
-}
-.contact-span-filter {
-  bottom: 70px;
+  bottom:130px;
   left: 435px;
+}
+span {
+  border: 5px solid black;
 }
 
 .input-filter {

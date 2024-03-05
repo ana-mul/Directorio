@@ -87,24 +87,47 @@ function App() {
   //IMAGEN
   const image = "src/assets/imgcontact.png";
 
-  //FORMULA PARA MOSTRAR FORMULARIO AGREGAR
-  // const [showForm, setShowForm] = useState(false);
-  // const [hideCover, setHideCover] = useState (false);
-  // const toggleSection = () => {
-  //   setShowForm(!showForm);
-  //   setHideCover(!hideCover);
-  // };
+  //FORMULA PARA MOSTRAR LIBRO ABIERTO
+  const [showOpen, setShowOpen] = useState(false);
+  // const [hideCover, setHideCover] = useState(false);
+  const toggleSection = () => {
+    setShowOpen(!showOpen);
+    // setHideCover(!hideCover);
+    console.log("show", showOpen);
+    // console.log("hide", hideCover)
+  };
 
   return (
     <>
-      {/* <section className={`section-app ${hideCover ? 'hidden' : ''}`}> */}
-      <section className="section-app">
+      <section
+        className="section-app"
+        style={{ display: showOpen ? "none" : "block" }}
+      >
         <div className="book-container">
-        <img src={image} alt="" />
-          <h1>Mis Contactos</h1>
+          <img src={image} alt="" />
+          <h1>Adress Book</h1>
+          <button className="open-book" onClick={() => setShowOpen(true)}>
+            Open
+          </button>
         </div>
-        <div className="book-open"></div>
       </section>
+      <div>
+        <section
+          className="section-open"
+          style={{ display: showOpen ? "flex" : "none" }}
+        >
+          <div className="div-app-left"  style={{ display: showOpen ? "flex" : "none" }}></div>
+          <div className="div-app-right"  style={{ display: showOpen ? "flex" : "none" }}>
+            {" "}
+            <button className="btn-add">Add new contact</button>
+            <button className="btn-search">Find a contact</button>
+            <button className="btn-contacts">Contact List</button>
+            <button className="btn-close" onClick={() => setShowOpen(false)}>
+              Close Adress Book
+            </button>
+          </div>
+        </section>
+      </div>
       <div>
         <Add
           name={name}
@@ -116,8 +139,6 @@ function App() {
           inputP={inputPhone}
           inputE={inputEmail}
           inputNo={inputNotes}
-          // showForm={showForm}
-          // toggleSection={toggleSection}
         />
         <Contact
           contact={contact}

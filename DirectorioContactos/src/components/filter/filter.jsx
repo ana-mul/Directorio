@@ -35,6 +35,7 @@ const Filter = (props) => {
               ))}
           </ul>
         </div>
+        <div className="div-span-filter">
         <span className="add-span-filter">
             <a href="#" className="add-a" >
               Add
@@ -45,6 +46,13 @@ const Filter = (props) => {
               Contacts
             </a>
           </span>
+          <span className="close-span-filter">
+            <a href="#" target="_blank" className="close-a">
+              Close
+            </a>
+          </span>
+        </div>
+        
       </section>
     </>
   );

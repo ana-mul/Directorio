@@ -1,0 +1,18 @@
+.section-list{
+    width: 435px;
+    height: 555px;
+    border-radius: 18px;
+    background-color: aquamarine;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-span-list{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position: relative;
+    top:50px;
+    left: 435px;
+  }
