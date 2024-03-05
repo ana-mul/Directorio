@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import "./App.css";
 import { Add } from "../add-contact/add.jsx";
 import { Contact } from "../contact/contact.jsx";
 import { List } from "../contact-list/list.jsx";
 import { Filter } from "../filter/filter.jsx";
-
 
 function App() {
   //  estado global de la aplicación y gestionará la lista de contactos
@@ -59,24 +57,15 @@ function App() {
   //FUNCION FILTRAR
 
   const find = () => {
-    //al agregar este parametro hace la funcion mas flexible
     return contact.filter((contacts) => {
       //aca filtro la lista de contactos
-      // const includes =
-      contacts.name.toLowerCase().includes(screen.toLowerCase()) ||//aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
-      //verifico si el nombre empieza con determinada letra
-      //vuelvo a usar filter() y normalizo la palabra en minisucula para poder comparar
-      // contacts.phone.toLowerCase().includes(screen.toLowerCase()) ||
-      // contacts.email.toLowerCase().includes(screen.toLowerCase()) ||
-      // contacts.notes.toLowerCase().includes(screen.toLowerCase());
-      
-      console.log("Contacto:", contacts.name, "Coincide:", includes);
-      // return includes;
+      return contacts.name.toLowerCase().includes(screen.toLowerCase()); //aca especificamente con nombre, primero nomralizo en minuscula para que no haya equivocacion
+      //verifico si el nombre cotiene  determinada letra
+      //normalizo la palabra en minisucula para poder comparar
     });
   };
 
   const handleInputChange = (e) => {
-    console.log("Valor de screen:", e.target.value);
     setScreen(e.target.value);
   };
 
@@ -95,12 +84,42 @@ function App() {
     }
   };
 
+  //IMAGEN
+  const image = "src/assets/imgcontact.png";
+
+  //FORMULA PARA MOSTRAR FORMULARIO AGREGAR
+  const [showForm, setShowForm] = useState(false);
+  const [hideCover, setHideCover] = useState (false);
+  const toggleSection = () => {
+    setShowForm(!showForm);
+    setHideCover(!hideCover);
+    console.log("hola", !showForm);
+    console.log ("chau", !hideCover);
+    
+  };
+  console.log ("chau", hideCover);
   return (
     <>
+      <section className={`section-app ${hideCover ? 'hidden' : ''}`}>
+        <div className="book-container">
+        <img src={image} alt="" />
+          <h1>Mis Contactos</h1>
+          <span className="add-span-app">
+            <a href="#" className="add-a" onClick={toggleSection}>
+              Add
+            </a>
+          </span>
+          <span className="contact-span-app">
+            <a href="#" target="_blank" className="contact-a">
+              Contacts
+            </a>
+          </span>
+        </div>
+        <div className="book-open"></div>
+      </section>
+    
       <div>
         <Add
-          contact={contact}
-          setContact={setContact}
           name={name}
           phone={phone}
           email={email}
@@ -110,6 +129,8 @@ function App() {
           inputP={inputPhone}
           inputE={inputEmail}
           inputNo={inputNotes}
+          showForm={showForm}
+          toggleSection={toggleSection}
         />
         <Contact
           contact={contact}
@@ -128,8 +149,6 @@ function App() {
           setScreen={setScreen}
           handleInputChange={handleInputChange}
         />
-        {/* <input type="text" onChange={inputName} value={name} />
-        <button onClick={add}>submit</button> */}
       </div>
     </>
   );

@@ -1,75 +1,39 @@
-img{
-    border: 1px solid black;
-    width: 200px;
-    height: 230px;
+.section-app {
+  width: 435px;
+  height: 555px;
+  border-radius: 18px;
+  background-color: aquamarine;
 }
-section{
-  margin-left: 400px;
-  margin-top:10px;
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  width: 430px;
+  height: 550px;
+  border-radius: 18px;
+}
+
+img {
+  width: 200px;
+  height: 230px;
+  display: flex;
+}
+span {
   position: relative;
+  border: 5px solid black;
+}
+.add-span-app {
+  bottom: 350px;
+  left: 235px;
+}
+.contact-span-app {
+  bottom: 320px;
+  left: 250px;
 }
 
-.book-container{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 5px solid black;
-    width: 50%;
-    height: 550px;
-    border-radius: 18px;
-}
-
-.front-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px 140px;
- 
-}
-
-.side-container{
-    border: 5px solid blue;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    width:50px;
-    height: 550px;
-    position: absolute;
-    right: 386px;
-    bottom:-4px;
-}
-
-.spiral{
-    border: 1px solid white;
-    background-color: white;
-    border-radius: 5px;
-    height:5px ;
-    position: relative;
-    right:15px;
-}
-.spiral-one{
-    top:50px;
-}
-.spiral-two{
-    top:150px;
-}
-.spiral-three{
-    top:250px;
-}
-.spiral-four{
-    top:350px;
-}
-.spiral-five{
-    top:450px;
-}
-
-span{
-    position: absolute;
-    left: 440px;
-    border: 5px solid black;
-}
-.add-span{
-    top:40px;
-}
-.contact-span{
-    top:80px;
+.hidden{
+    display: none;
 }

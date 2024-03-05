@@ -5,14 +5,16 @@ const Add = (props) => {
   // Este componente contendrá un formulario para agregar nuevos contactos.
   // Deberá manejar los eventos de entrada del formulario y enviar la información del nuevo contacto al componente App para ser agregado a la lista de contactos.
 
-  const { contact, setContact, name, phone, email, notes, add, inputNa, inputP, inputE, inputNo } = props;
-
+  const { name, phone, email, notes, add, inputNa, inputP, inputE, inputNo, showForm, toggleSection } = props;
+  console.log("showForm:", showForm);
   return (
     <>
       {/* 
 Este componente se encargaría de contener el formulario para agregar nuevos contactos.
 Debería tener los campos de entrada (inputs) necesarios para ingresar la información del contacto, como nombre, número de teléfono, dirección, etc. */}
-      <section>
+      <div>
+        {showForm && (
+      <section className="section-add">
         <div>
           <form className="form" action="">
             <label htmlFor="">Nombre</label>
@@ -26,7 +28,20 @@ Debería tener los campos de entrada (inputs) necesarios para ingresar la inform
             <button onClick={(e) => { e.preventDefault(); add(); }}>Agregar contacto</button>
           </form>
         </div>
+        <span className="add-span-add">
+            <a href="#" className="add-a" onClick={toggleSection}>
+              Add
+            </a>
+          </span>
+          <span className="contact-span-add">
+            <a href="#" target="_blank" className="contact-a">
+              Contacts
+            </a>
+          </span>
       </section>
+      )}
+      </div>
+      
     </>
   );
 };

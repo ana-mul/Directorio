@@ -1,8 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    background-color: #6c5c8871;
-    margin: 0;
-    padding: 0;
-  }
+  background-image: linear-gradient(to bottom right, #d498da, #5e305f);
+  margin: 0;
+  padding: 0;
+  --vivid-violet-50: #fbf7fc;
+  --vivid-violet-100: #f7edfa;
+  --vivid-violet-200: #efdbf3;
+  --vivid-violet-300: #e3bee9;
+  --vivid-violet-400: #d498da;
+  --vivid-violet-500: #be6ec7;
+  --vivid-violet-600: #a34faa;
+  --vivid-violet-700: #924497;
+  --vivid-violet-800: #703573;
+  --vivid-violet-900: #5e305f;
+  --vivid-violet-950: #3b163c;
+}
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}

@@ -20,7 +20,7 @@ const Filter = (props) => {
       </div>
       <div>
         <ul>
-            {screen && contact.filter(find).map((contacts, index)=>(
+            {screen && find().map((contacts, index)=>(
                 <li key={index}>
                     <p>{contacts.name}</p>
                     <p>{contacts.phone}</p>
