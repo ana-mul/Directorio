@@ -88,36 +88,23 @@ function App() {
   const image = "src/assets/imgcontact.png";
 
   //FORMULA PARA MOSTRAR FORMULARIO AGREGAR
-  const [showForm, setShowForm] = useState(false);
-  const [hideCover, setHideCover] = useState (false);
-  const toggleSection = () => {
-    setShowForm(!showForm);
-    setHideCover(!hideCover);
-    console.log("hola", !showForm);
-    console.log ("chau", !hideCover);
-    
-  };
-  console.log ("chau", hideCover);
+  // const [showForm, setShowForm] = useState(false);
+  // const [hideCover, setHideCover] = useState (false);
+  // const toggleSection = () => {
+  //   setShowForm(!showForm);
+  //   setHideCover(!hideCover);
+  // };
+
   return (
     <>
-      <section className={`section-app ${hideCover ? 'hidden' : ''}`}>
+      {/* <section className={`section-app ${hideCover ? 'hidden' : ''}`}> */}
+      <section className="section-app">
         <div className="book-container">
         <img src={image} alt="" />
           <h1>Mis Contactos</h1>
-          <span className="add-span-app">
-            <a href="#" className="add-a" onClick={toggleSection}>
-              Add
-            </a>
-          </span>
-          <span className="contact-span-app">
-            <a href="#" target="_blank" className="contact-a">
-              Contacts
-            </a>
-          </span>
         </div>
         <div className="book-open"></div>
       </section>
-    
       <div>
         <Add
           name={name}
@@ -129,8 +116,8 @@ function App() {
           inputP={inputPhone}
           inputE={inputEmail}
           inputNo={inputNotes}
-          showForm={showForm}
-          toggleSection={toggleSection}
+          // showForm={showForm}
+          // toggleSection={toggleSection}
         />
         <Contact
           contact={contact}
