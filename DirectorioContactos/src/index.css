@@ -10,12 +10,13 @@
   --conifer-200: #dff2a4;
   --conifer-300: #c8e76f;
   --conifer-400: #b1d945;
-  --conifer-500: #92be24;
-  --conifer-600: #719818;
-  --conifer-700: #567417;
-  --conifer-800: #455c18;
-  --conifer-900: #3c4e19;
-  --conifer-950: #1e2b08;
+  --verde-delete: #92be24;
+  --verde-linea: #719818;
+  --verde-input: #567417;
+  --verde-militar: #455c18;
+  --verde-grisaceo: #3c4e19;
+  --background-light: #fbfaeb;
+  --verde-oscuro: #1e2b08;
   
   
 }

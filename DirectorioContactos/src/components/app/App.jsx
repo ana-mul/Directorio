@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faFileArrowDown, faPhone } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/bakcground.png";
 import "./App.css";
 import { Add } from "../add-contact/add.jsx";
@@ -87,13 +87,13 @@ function App() {
     }
   };
 
+
   return (
     <>
       <div className="app-div">
-        <FontAwesomeIcon className="fa-bars" icon={faBars} />
+      <FontAwesomeIcon className="fa-file-arrow-down" icon={faFileArrowDown} title="Download Contact List"/>
         <h1>Adress Book</h1>
-        {/* <img src={background} alt="" /> */}
-        <FontAwesomeIcon className="fa-phone" icon={faPhone} />
+        <FontAwesomeIcon className="fa-phone" icon={faPhone} title="Make a Call"/>
       </div>
 
       <div>

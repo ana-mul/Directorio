@@ -6,16 +6,31 @@
   width: 430px;
   height: 150px;
   border: 1px solid black;
+  border-bottom: none;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   background-image: url(../../assets/bakcground.png);
   background-size: cover;
 }
-
-.fa-bars, .fa-phone{
-  font-size: 20px;
+.fa-file-arrow-down,
+.fa-phone {
+  font-size: 23px;
   color: #1e2b08;
 }
-h1{
+h1 {
   color: #1e2b08;
+}
+.fa-phone {
+  transition: transform 0.3s ease;
+}
+.fa-phone:hover {
+  transform: translate(-2px, -2px);
+}
+
+.fa-file-arrow-down {
+  transition: transform 0.3s ease;
+}
+
+.fa-file-arrow-down:hover {
+  transform: translateY(5px);
 }

@@ -1,10 +1,39 @@
 .section-list{
-    width: 435px;
-    height: 555px;
-    border-radius: 18px;
-    background-color: aquamarine;
-    border: 5px solid black;
+    width: 470px;
+    height: auto;
+    background-color: #fbfaeb;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
-
+.div-list-two{
+    margin-top: 25px;
+    width: 400px;
+    position: relative;
+    right:27px; 
+    bottom:25px;
+}
+.span-contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+  }
+.fa-trash{
+    font-size: 25px;
+    color: #92be24;
+    position: relative;
+    right: 25px;
+    top: 0px;
+}
+.fa-trash {
+    transition: transform 0.3s ease; 
+  }
+  .fa-trash:hover {
+    transform: translateX(-5px); 
+  }
+  .fa-trash:hover:hover {
+    transform: translateX(10px); 
+  }

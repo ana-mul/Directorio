@@ -4,7 +4,7 @@ import {
   faSearch,
   faUser,
   faEnvelope,
-  faPhone,
+  faMobile,
   faPenFancy,
 } from "@fortawesome/free-solid-svg-icons";
 import "../filter/filter.css";
@@ -16,6 +16,7 @@ const Filter = (props) => {
 
   return (
     <>
+    <section>
       <div className="div-filter-input">
         <input
           type="text"
@@ -30,15 +31,16 @@ const Filter = (props) => {
         <ul className="ul-filter">
           {screen &&
             find().map((contacts, index) => (
-              <li key={index}>
-                <div className="div-span">
+              <div className="div-span">
+                <li key={index}>
+                  <div className="div-line"></div>
                   <span className="span-contact">
                     <FontAwesomeIcon className="fa-user" icon={faUser} />
                     <p className="p-name">NAME</p>
                     <p className="name">{contacts.name}</p>
                   </span>
                   <span className="span-contact">
-                    <FontAwesomeIcon className="fa-phone" icon={faPhone} />
+                    <FontAwesomeIcon className="fa-mobile" icon={faMobile} />
                     <p>{contacts.phone}</p>
                   </span>
                   <span className="span-contact">
@@ -55,11 +57,12 @@ const Filter = (props) => {
                     />
                     <p>{contacts.notes}</p>
                   </span>
-                </div>
-              </li>
+                </li>
+              </div>
             ))}
         </ul>
       </div>
+      </section>
     </>
   );
 };

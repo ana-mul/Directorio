@@ -1,24 +1,25 @@
 .section-add {
+  width: 470px;
+  height: auto;
+  background-color: #fbfaeb;
+  border: 1px solid black;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px ;
   display: flex;
-  width: 430px;
-  height: 550px;
-  border-radius: 18px;
+  flex-direction: column;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  border: 5px solid black;
-  width: 430px;
-  height: 550px;
-  border-radius: 18px;
+  padding:20px;
 }
 
 label {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
+  font-weight: 700;
   padding: 10px;
 }
 
@@ -26,8 +27,9 @@ input {
   padding: 5px;
   width: 60%;
   height: 20px;
-  border: none;
+  border: 2px solid var(--verde-input);
   border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -37,27 +39,31 @@ input[type="number"]::-webkit-outer-spin-button {
 
 textarea {
   padding: 5px;
-  width: 60%;
+  width: 80%;
   height: 150px;
-  border: none;
+  border: 2px solid var(--verde-input);
   border-radius: 5px;
   resize: none;
+  font-family: 'Poppins', sans-serif;
 }
 
-.btn-add {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  width: 90px;
-}
 .btn-add-c{
   margin-top: 20px;
   padding: 10px 20px;
-  border: none;
+  border: 2px solid var(--verde-input);
   border-radius: 10px;
   width: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+.div-message{
+  display: flex;
+  justify-content: center;
 }
 
+.btn-add-c:active {
+  transform: translateY(3px); 
+}
 
 
