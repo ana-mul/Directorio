@@ -1,67 +1,21 @@
-.section-app {
+.app-div {
+  padding: 20px;
   display: flex;
-  width: 435px;
-  height: 555px;
-  border-radius: 18px;
-  background-color: aquamarine;
-}
-
-.book-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid black;
-  width: 430px;
-  height: 550px;
-  border-radius: 18px;
-}
-
-img {
-  width: 200px;
-  height: 230px;
-  display: flex;
-}
-span {
-  position: relative;
-  border: 5px solid black;
-}
-.add-span-app {
-  bottom: 350px;
-  left: 235px;
-}
-.contact-span-app {
-  bottom: 320px;
-  left: 250px;
-}
-
-.section-open{
-  display: none;
   flex-direction: row;
-  width: 860px;
-  height: 555px;
-  border-radius: 18px;
-  background-color: aquamarine;
+  justify-content: space-between;
+  width: 430px;
+  height: 150px;
+  border: 1px solid black;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-image: url(../../assets/bakcground.png);
+  background-size: cover;
 }
 
-.div-app-left{
-  display: none;
-  border: 1px solid black;
-  border-right: none;
-  width:430px;
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
+.fa-bars, .fa-phone{
+  font-size: 20px;
+  color: #1e2b08;
 }
-.div-app-right{
-  display: none;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap:20px;
-  padding: 0 15px ;
-  border: 1px solid black;
-  border-left: 5px dashed white;
-  width:430px;
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
+h1{
+  color: #1e2b08;
 }

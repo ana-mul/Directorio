@@ -1,59 +1,65 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faUser,
+  faEnvelope,
+  faPhone,
+  faPenFancy,
+} from "@fortawesome/free-solid-svg-icons";
 import "../filter/filter.css";
 
 const Filter = (props) => {
-  const { setContact, contact, find, setScreen, screen, handleInputChange } =
-    props;
+  const { find, screen, handleInputChange } = props;
   // //Este componente permitirá a los usuarios filtrar la lista de contactos según ciertos criterios.
   // Deberá manejar los eventos de entrada del filtro y enviar la información de filtrado al componente App para que actualice la lista.
 
   return (
     <>
-      <section className="section-filter">
-        <div>
-          <input
-            type="text"
-            value={screen}
-            onChange={handleInputChange}
-            placeholder="Buscar contacto"
-            className="input-filter"
-          />
-          <FontAwesomeIcon className="fa-search" icon={faSearch} />
-        </div>
-        <div>
-          <ul className="ul-filter">
-            {screen &&
-              find().map((contacts, index) => (
-                <li key={index}>
-                  <p className="name">{contacts.name}</p>
-                  <p>{contacts.phone}</p>
-                  <p>{contacts.email}</p>
-                  <p>{contacts.notes}</p>
-                </li>
-              ))}
-          </ul>
-        </div>
-        <div className="div-span-filter">
-        <span className="add-span-filter">
-            <a href="#" className="add-a" >
-              Add
-            </a>
-          </span>
-          <span className="contact-span-filter">
-            <a href="#" target="_blank" className="contact-a">
-              Contacts
-            </a>
-          </span>
-          <span className="close-span-filter">
-            <a href="#" target="_blank" className="close-a">
-              Close
-            </a>
-          </span>
-        </div>
-        
-      </section>
+      <div className="div-filter-input">
+        <input
+          type="text"
+          value={screen}
+          onChange={handleInputChange}
+          placeholder="Search Contact"
+          className="input-filter"
+        />
+        <FontAwesomeIcon className="fa-search" icon={faSearch} />
+      </div>
+      <div className="div-filter-results">
+        <ul className="ul-filter">
+          {screen &&
+            find().map((contacts, index) => (
+              <li key={index}>
+                <div className="div-span">
+                  <span className="span-contact">
+                    <FontAwesomeIcon className="fa-user" icon={faUser} />
+                    <p className="p-name">NAME</p>
+                    <p className="name">{contacts.name}</p>
+                  </span>
+                  <span className="span-contact">
+                    <FontAwesomeIcon className="fa-phone" icon={faPhone} />
+                    <p>{contacts.phone}</p>
+                  </span>
+                  <span className="span-contact">
+                    <FontAwesomeIcon
+                      className="fa-envelope"
+                      icon={faEnvelope}
+                    />
+                    <p>{contacts.email}</p>
+                  </span>
+                  <span className="span-contact">
+                    <FontAwesomeIcon
+                      className="fa-pen-fancy"
+                      icon={faPenFancy}
+                    />
+                    <p>{contacts.notes}</p>
+                  </span>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </div>
     </>
   );
 };

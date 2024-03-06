@@ -1,8 +1,8 @@
 .section-add {
+  display: flex;
   width: 430px;
   height: 550px;
   border-radius: 18px;
-  display: block;
 }
 
 form {
@@ -44,23 +44,20 @@ textarea {
   resize: none;
 }
 
-button {
+.btn-add {
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
+  width: 90px;
 }
-.div-span-add{
-  display: flex;
-  flex-direction: column;
-  gap:10px;
-  position: relative;
-  bottom:510px;
-  left: 435px;
+.btn-add-c{
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
 }
 
-span{
-    border: 5px solid black;
-    width: 70px;
-}
+
 

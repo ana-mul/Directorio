@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
+import background from "../../assets/bakcground.png";
 import "./App.css";
 import { Add } from "../add-contact/add.jsx";
 import { Contact } from "../contact/contact.jsx";
@@ -84,51 +87,22 @@ function App() {
     }
   };
 
-  //IMAGEN
-  const image = "src/assets/imgcontact.png";
-
-  //FORMULA PARA MOSTRAR LIBRO ABIERTO
-  const [showOpen, setShowOpen] = useState(false);
-  // const [hideCover, setHideCover] = useState(false);
-  const toggleSection = () => {
-    setShowOpen(!showOpen);
-    // setHideCover(!hideCover);
-    console.log("show", showOpen);
-    // console.log("hide", hideCover)
-  };
-
   return (
     <>
-      <section
-        className="section-app"
-        style={{ display: showOpen ? "none" : "block" }}
-      >
-        <div className="book-container">
-          <img src={image} alt="" />
-          <h1>Adress Book</h1>
-          <button className="open-book" onClick={() => setShowOpen(true)}>
-            Open
-          </button>
-        </div>
-      </section>
-      <div>
-        <section
-          className="section-open"
-          style={{ display: showOpen ? "flex" : "none" }}
-        >
-          <div className="div-app-left"  style={{ display: showOpen ? "flex" : "none" }}></div>
-          <div className="div-app-right"  style={{ display: showOpen ? "flex" : "none" }}>
-            {" "}
-            <button className="btn-add">Add new contact</button>
-            <button className="btn-search">Find a contact</button>
-            <button className="btn-contacts">Contact List</button>
-            <button className="btn-close" onClick={() => setShowOpen(false)}>
-              Close Adress Book
-            </button>
-          </div>
-        </section>
+      <div className="app-div">
+        <FontAwesomeIcon className="fa-bars" icon={faBars} />
+        <h1>Adress Book</h1>
+        {/* <img src={background} alt="" /> */}
+        <FontAwesomeIcon className="fa-phone" icon={faPhone} />
       </div>
+
       <div>
+        <Filter
+          find={find}
+          screen={screen}
+          handleInputChange={handleInputChange}
+        />
+        <List setContact={setContact} contact={contact} remove={remove} />
         <Add
           name={name}
           phone={phone}
@@ -147,15 +121,6 @@ function App() {
           phone={phone}
           email={email}
           notes={notes}
-        />
-        <List setContact={setContact} contact={contact} remove={remove} />
-        <Filter
-          setContact={setContact}
-          contact={contact}
-          find={find}
-          screen={screen}
-          setScreen={setScreen}
-          handleInputChange={handleInputChange}
         />
       </div>
     </>
