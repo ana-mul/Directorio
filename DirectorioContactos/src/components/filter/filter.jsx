@@ -31,7 +31,7 @@ const Filter = (props) => {
             find().map((contacts, index) => (
               <div className="div-span">
                 <li key={index}>
-                  <div className="div-line"></div>
+                  <div className="div-line-filter"></div>
                   <span className="span-contact">
                     <FontAwesomeIcon className="fa-user" icon={faUser} />
                     <p className="p-name">NAME</p>

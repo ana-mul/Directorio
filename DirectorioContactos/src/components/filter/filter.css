@@ -19,8 +19,9 @@
   height: auto;
   background-image: url(../../assets/bakcground.png);
   background-size: cover;
-  border: 1px solid black;
+  border: 3px solid var(--verde-grisaceo);
   border-top: none;
+  border-bottom: none;
   display: flex;
   flex-direction: column;
 }
@@ -38,17 +39,16 @@
   position: relative;
   right:27px; 
   bottom:25px;
-  background-color:  #f8fce9;
+  background-color: var(--background-light);
 }
-.div-line{
+.div-line-filter{
   width: 5px;
   height: 180px;
   border: 1px solid black;
-  background-image: linear-gradient(to top, #3c4e19, #719818);
+  background-image: linear-gradient(to top, var(--verde-grisaceo), var(--verde-linea));
   position: absolute;
-  top: 30px;
+  top: 15px;
   right:412px;
-
 }
 ul {
   list-style: none;
@@ -74,6 +74,30 @@ p {
 }
 .fa-user, .fa-mobile, .fa-envelope, .fa-pen-fancy{
   font-size: 15px;
-  color: #1e2b08;
+  color: var(--verde-oscuro);
 
 }
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 576px) {
+  .div-filter-input{
+    bottom: 330px;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width: 768px) {
+  .div-filter-input {
+    bottom: 190px;
+  }
+}
+
+
+@media screen and (min-width:768px) and (max-width: 992px) {
+  .div-filter-input {
+    bottom:0;
+    top:30px;
+  }
+}
+
+

@@ -29,7 +29,7 @@ const Add = (props) => {
   return (
     <>
       <div>
-        <section className="section-add">
+        <section id ="add" className="section-add">
           <div>
             <form className="form" action="" onSubmit={handleSubmit}>
               <label htmlFor="">Name</label>

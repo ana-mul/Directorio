@@ -1,15 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  background-image: linear-gradient(to bottom right,#719818, #3c4e19);
+  background-image: linear-gradient(to bottom right,var(--verde-linea),var(--verde-grisaceo));
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  --conifer-50: #f8fce9;
-  --conifer-100: #eff8cf;
-  --conifer-200: #dff2a4;
-  --conifer-300: #c8e76f;
-  --conifer-400: #b1d945;
   --verde-delete: #92be24;
   --verde-linea: #719818;
   --verde-input: #567417;

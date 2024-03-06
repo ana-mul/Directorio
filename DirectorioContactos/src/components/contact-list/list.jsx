@@ -36,7 +36,7 @@ const List = (props) => {
                     />
                   </div>
                   <li key={index}>
-                    <div className="div-line"></div>
+                    <div className="div-line-list"></div>
                     <span className="span-contact">
                       {" "}
                       <FontAwesomeIcon className="fa-user" icon={faUser} />

@@ -5,20 +5,20 @@
   justify-content: space-between;
   width: 430px;
   height: 150px;
-  border: 1px solid black;
+  border: 3px solid var(--verde-grisaceo);
   border-bottom: none;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   background-image: url(../../assets/bakcground.png);
   background-size: cover;
 }
-.fa-file-arrow-down,
+.fa-user-plus,
 .fa-phone {
   font-size: 23px;
-  color: #1e2b08;
+  color: var(--verde-oscuro);
 }
 h1 {
-  color: #1e2b08;
+  color: var(--verde-oscuro);
 }
 .fa-phone {
   transition: transform 0.3s ease;
@@ -27,10 +27,10 @@ h1 {
   transform: translate(-2px, -2px);
 }
 
-.fa-file-arrow-down {
+.fa-user-plus {
   transition: transform 0.3s ease;
 }
 
-.fa-file-arrow-down:hover {
+.fa-user-plus:hover {
   transform: translateY(5px);
 }
