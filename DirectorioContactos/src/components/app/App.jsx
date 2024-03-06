@@ -4,14 +4,10 @@ import { faFileArrowDown, faPhone } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/bakcground.png";
 import "./App.css";
 import { Add } from "../add-contact/add.jsx";
-import { Contact } from "../contact/contact.jsx";
 import { List } from "../contact-list/list.jsx";
 import { Filter } from "../filter/filter.jsx";
 
 function App() {
-  //  estado global de la aplicación y gestionará la lista de contactos
-  //funciones para agregar nuevos contactos, eliminar contactos existentes y filtrar la lista de contactos
-
   const [contact, setContact] = useState([]);
 
   const [name, setName] = useState("");
@@ -113,14 +109,6 @@ function App() {
           inputP={inputPhone}
           inputE={inputEmail}
           inputNo={inputNotes}
-        />
-        <Contact
-          contact={contact}
-          setContact={setContact}
-          name={name}
-          phone={phone}
-          email={email}
-          notes={notes}
         />
       </div>
     </>

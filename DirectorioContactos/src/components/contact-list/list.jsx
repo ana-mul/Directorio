@@ -13,10 +13,6 @@ import "../contact-list/list.css";
 const List = (props) => {
   const { setContact, contact, remove } = props;
 
-  //Este componente mostrará la lista de contactos.
-  // Deberá recibir la lista de contactos como prop del componente App.
-  // Deberá tener la capacidad de eliminar contactos, lo que implicará llamar a una función en el componente App para actualizar el estado.
-
   return (
     <>
       <div>

@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./add.css";
 
 const Add = (props) => {
-  // Este componente contendrá un formulario para agregar nuevos contactos.
-  // Deberá manejar los eventos de entrada del formulario y enviar la información del nuevo contacto al componente App para ser agregado a la lista de contactos.
-
   const { name, phone, email, notes, add, inputNa, inputP, inputE, inputNo } =
     props;
 
