@@ -20,7 +20,7 @@ const List = (props) => {
           <div className="div-list">
             <ul>
               {contact.map((contacts, index) => (
-                <div className="div-list-two">
+                <div className="div-list-two" key={index}>
                   <div>
                     <FontAwesomeIcon
                       className="fa-trash"
@@ -35,7 +35,7 @@ const List = (props) => {
                       }
                     />
                   </div>
-                  <li key={index}>
+                  <li>
                     <div className="div-line-list"></div>
                     <span className="span-contact">
                       {" "}

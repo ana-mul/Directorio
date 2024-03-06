@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faPhone } from "@fortawesome/free-solid-svg-icons";
 import background from "../../assets/bakcground.png";
@@ -30,6 +30,15 @@ function App() {
     setNotes(event.target.value);
   };
 
+  // //LOCAL STORAGE
+  useEffect(() => {
+    const storedContact = JSON.parse(localStorage.getItem("contact")); //localStorage es un obj del navegador para alamacenar datos
+    //JSON.parse convierte una cadena JSON a un obj xq los datos de almacenamiento local se almancenan como cadenas
+    if (storedContact) { //si hay datos almacenados
+      setContact(storedContact);//se almancenan aca
+    }
+  }, []); //dependencia, se ejecuta una sola vez
+
   //FUNCION AGREGAR CONTACTOS
 
   const add = () => {
@@ -46,6 +55,8 @@ function App() {
 
       const adding = [...contact, newContact]; //se crea una varible que sume el nuevo contacto a la lista anterior
       setContact(adding); //actualizo el estado que contiene el array
+      localStorage.setItem("contact", JSON.stringify(adding)); //.setItem almacena un valor
+      //JSON.stringify(adding) convierte el array en cadena porque local storage almacena en cadena
       setName(""); //vacio el input
       setPhone("");
       setEmail("");

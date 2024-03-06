@@ -5,7 +5,7 @@ const Add = (props) => {
   const { name, phone, email, notes, add, inputNa, inputP, inputE, inputNo } =
     props;
 
-    useEffect
+  
   const [successMessage, setSuccessMessage] = useState(false);
 
   useEffect(() => { //funcion para que cuando vuelvo a escrbir en los inputs se borre el mensaje de exito
